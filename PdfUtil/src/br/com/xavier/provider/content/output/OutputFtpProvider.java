@@ -1,4 +1,4 @@
-package br.com.xavier.content.provider.output;
+package br.com.xavier.provider.content.output;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -6,14 +6,21 @@ import java.net.URL;
 
 import org.apache.http.auth.InvalidCredentialsException;
 
-import br.com.xavier.content.provider.OutputProvider;
 import br.com.xavier.ftp.FTPUtil;
 import br.com.xavier.pdf.signature.domain.AuthenticationData;
+import br.com.xavier.provider.content.OutputProvider;
 
 public class OutputFtpProvider extends OutputProvider {
+	
+	private int timeOutSeconds;
+	private boolean connectWithPassiveMode;
 
-	protected OutputFtpProvider(URL url, AuthenticationData authenticationData) throws MalformedURLException, InvalidCredentialsException {
+	protected OutputFtpProvider(
+		URL url, AuthenticationData authenticationData, int timeOutSeconds, boolean connectWithPassiveMode
+	) throws MalformedURLException, InvalidCredentialsException {
 		super(url, authenticationData);
+		this.timeOutSeconds = timeOutSeconds;
+		this.connectWithPassiveMode = connectWithPassiveMode;
 	}
 
 	@Override
@@ -31,22 +38,16 @@ public class OutputFtpProvider extends OutputProvider {
 		FTPUtil ftpClient = new FTPUtil(
 			getUrl().getHost(), getUrl().getPort(),
 			getAuthenticationData().getUserName(), 
-			getAuthenticationData().getUserPassword(), 30
+			getAuthenticationData().getUserPassword(), 
+			timeOutSeconds, connectWithPassiveMode
 		);
 		
 		try {
 			String filePath = getUrl().getPath();
-			ftpClient.connect();
-			ftpClient.login();
 			ftpClient.uploadFile(filePath, data);
 			return true;
 		} catch(IOException e) {
 			throw e;
-		} finally {
-			if(ftpClient != null && ftpClient.isConnected()){
-				ftpClient.logout();
-			}
 		}
 	}
-
 }

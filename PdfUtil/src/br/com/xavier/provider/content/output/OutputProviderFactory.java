@@ -1,4 +1,4 @@
-package br.com.xavier.content.provider.output;
+package br.com.xavier.provider.content.output;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 
 import org.apache.http.auth.InvalidCredentialsException;
 
-import br.com.xavier.content.provider.OutputProvider;
 import br.com.xavier.pdf.signature.domain.AuthenticationData;
+import br.com.xavier.provider.content.OutputProvider;
 
 public class OutputProviderFactory {
 	
@@ -43,7 +43,7 @@ public class OutputProviderFactory {
 		case "file":
 			return new OutputFileProvider(url, ad);
 		case "ftp":
-			return new OutputFtpProvider(url, ad);
+			return new OutputFtpProvider(url, ad, 30, true);
 		}
 		
 		throw new MalformedURLException("NO PROTOCOL SUPPORT FOR : " + protocol);

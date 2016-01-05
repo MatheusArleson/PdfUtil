@@ -1,4 +1,4 @@
-package br.com.xavier.content.provider.output;
+package br.com.xavier.provider.content.output;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9,8 +9,8 @@ import java.net.URL;
 
 import org.apache.http.auth.InvalidCredentialsException;
 
-import br.com.xavier.content.provider.OutputProvider;
 import br.com.xavier.pdf.signature.domain.AuthenticationData;
+import br.com.xavier.provider.content.OutputProvider;
 
 public class OutputFileProvider extends OutputProvider {
 

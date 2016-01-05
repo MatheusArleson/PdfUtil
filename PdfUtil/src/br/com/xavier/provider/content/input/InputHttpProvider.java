@@ -1,4 +1,4 @@
-package br.com.xavier.content.provider.input;
+package br.com.xavier.provider.content.input;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -19,10 +19,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-import br.com.xavier.content.provider.InputProvider;
 import br.com.xavier.http.content.HttpContentEncodingHandler;
 import br.com.xavier.http.transfer.HttpContentTransferEncodingHandler;
 import br.com.xavier.pdf.signature.domain.AuthenticationData;
+import br.com.xavier.provider.content.InputProvider;
 
 public class InputHttpProvider extends InputProvider {
 	

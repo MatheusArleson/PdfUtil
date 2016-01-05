@@ -1,4 +1,4 @@
-package br.com.xavier.content.provider.output;
+package br.com.xavier.provider.content.output;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -15,8 +15,8 @@ import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-import br.com.xavier.content.provider.OutputProvider;
 import br.com.xavier.pdf.signature.domain.AuthenticationData;
+import br.com.xavier.provider.content.OutputProvider;
 
 public class OutputHttpProvider extends OutputProvider {
 

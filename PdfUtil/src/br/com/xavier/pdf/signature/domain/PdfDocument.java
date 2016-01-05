@@ -1,8 +1,8 @@
 package br.com.xavier.pdf.signature.domain;
 
-import br.com.xavier.content.provider.InputProvider;
-import br.com.xavier.content.provider.OutputProvider;
 import br.com.xavier.pdf.signature.domain.enums.SignatureCertificationLevel;
+import br.com.xavier.provider.content.InputProvider;
+import br.com.xavier.provider.content.OutputProvider;
 
 public class PdfDocument {
 	

@@ -1,4 +1,4 @@
-package br.com.xavier.content.provider.input;
+package br.com.xavier.provider.content.input;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,8 +12,8 @@ import java.nio.file.AccessDeniedException;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.auth.InvalidCredentialsException;
 
-import br.com.xavier.content.provider.InputProvider;
 import br.com.xavier.pdf.signature.domain.AuthenticationData;
+import br.com.xavier.provider.content.InputProvider;
 
 public class InputFileProvider extends InputProvider {
 	

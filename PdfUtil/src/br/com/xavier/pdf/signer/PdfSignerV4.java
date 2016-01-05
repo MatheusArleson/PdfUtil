@@ -44,13 +44,13 @@ import com.itextpdf.text.pdf.security.ExternalSignature;
 import com.itextpdf.text.pdf.security.MakeSignature;
 import com.itextpdf.text.pdf.security.MakeSignature.CryptoStandard;
 
-import br.com.xavier.content.provider.InputProvider;
-import br.com.xavier.content.provider.OutputProvider;
-import br.com.xavier.content.provider.input.InputProviderFactory;
-import br.com.xavier.content.provider.output.OutputProviderFactory;
 import br.com.xavier.pdf.signature.domain.PdfDocument;
 import br.com.xavier.pdf.signature.domain.enums.SignatureCertificationLevel;
 import br.com.xavier.pdf.watermark.PdfWatermarker;
+import br.com.xavier.provider.content.InputProvider;
+import br.com.xavier.provider.content.OutputProvider;
+import br.com.xavier.provider.content.input.InputProviderFactory;
+import br.com.xavier.provider.content.output.OutputProviderFactory;
 import br.com.xavier.smartcard.certificate.CertificateProcessor;
 import br.com.xavier.util.StringValidator;
 
