@@ -6,7 +6,7 @@ import java.net.URL;
 
 import org.apache.http.auth.InvalidCredentialsException;
 
-import br.com.xavier.pdf.ftp.FTPUtil;
+import br.com.xavier.ftp.FTPUtil;
 import br.com.xavier.pdf.pdf.signature.domain.AuthenticationData;
 import br.com.xavier.pdf.provider.OutputProvider;
 

@@ -1,4 +1,4 @@
-package br.com.xavier.pdf.ftp;
+package br.com.xavier.ftp;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
